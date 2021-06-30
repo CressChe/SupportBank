@@ -1,19 +1,21 @@
-﻿using System;
+﻿using NLog;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SupportBank
 {
-    class Member
+    internal class Member
     {
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         public string Name { get; private set; }
-        public double Total { get; set; }
+        public double Total => Transactions.Sum(transaction => transaction.From == Name ? -transaction.Amount : transaction.Amount);
+
+        public List<Transaction> Transactions;
+
         public Member(string name)
         {
             Name = name;
-            Total = 0.0;
+            Transactions = new List<Transaction>();
         }
     }
 }

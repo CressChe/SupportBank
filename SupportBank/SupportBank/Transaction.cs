@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NLog;
 
 namespace SupportBank
 {
-    class Transaction
+    internal class Transaction
     {
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         public string Date { get; private set; }
         public string From { get; private set; }
         public string To { get; private set; }
