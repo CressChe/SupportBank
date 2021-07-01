@@ -32,8 +32,13 @@ namespace SupportBank
             Logger.Info("Parsing CSV");
             var lines = File.ReadAllLines(@"..\..\..\Transactions2014.csv").ToList();
             lines = lines.Skip(1).ToList();
-            var transactions = lines.Where(line => IsValidTransaction(line)).Select(line => new Transaction(line.Split(','))).ToList();
+            var transactions = lines.Where(line => IsValidTransaction(line.Split(','))).Select(line => new Transaction(line.Split(','))).ToList();
             return transactions;
+        }
+
+        private static bool IsValidTransaction(string[] values)
+        {
+            return true;
         }
 
         private static List<Member> GetAllMembers(List<Transaction> transactions)
@@ -78,7 +83,7 @@ namespace SupportBank
             else
             {
                 Console.WriteLine("Invalid option given. Please try again.");
-                Logger.Debug($"User entered an invalid Option - programme closed.");
+                Logger.Debug($"User entered an invalid Option - programme rerun.");
                 PromptUserForInput(members);
             }
         }
