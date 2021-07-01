@@ -32,7 +32,7 @@ namespace SupportBank
             Logger.Info("Parsing CSV");
             var lines = File.ReadAllLines(@"..\..\..\Transactions2014.csv").ToList();
             lines = lines.Skip(1).ToList();
-            var transactions = lines.Select(line => new Transaction(line.Split(','))).ToList();
+            var transactions = lines.Where(line => IsValidTransaction(line)).Select(line => new Transaction(line.Split(','))).ToList();
             return transactions;
         }
 
@@ -63,6 +63,7 @@ namespace SupportBank
             Console.WriteLine("Welcome to SupportBank!");
             Console.WriteLine("Would you like to: \n1) Check all account balances? \n2) Check transaction history for an account?");
             var userOption = Console.ReadLine();
+            Logger.Debug($"User Input: '{userOption}'");
             if (userOption == "1")
             {
                 PrintAllMemberTotals(members);
@@ -71,17 +72,21 @@ namespace SupportBank
             {
                 Console.WriteLine("Which member would you like to print the transaction history for?");
                 var printMember = Console.ReadLine();
+                Logger.Debug($"Account Name Input: '{printMember}'");
                 PrintMemberTotal(members, printMember);
             }
             else
             {
                 Console.WriteLine("Invalid option given. Please try again.");
+                Logger.Debug($"User entered an invalid Option - programme closed.");
+                PromptUserForInput(members);
             }
         }
 
 
         private static void PrintAllMemberTotals(List<Member> members)
         {
+            Logger.Debug("Printing totals for all members");
             foreach (var member in members)
             {
                 Console.WriteLine(member.Name + ": " + member.Total);
@@ -93,16 +98,17 @@ namespace SupportBank
             var member = members.Find(member => member.Name.ToLower() == name.ToLower());
             if (member == null)
             {
+                Logger.Warn($"User input '{name}' did not match any members.");
                 Console.WriteLine($"Member {name} not found. Nothing to return.");
+                return;
             }
-            else
+
+            Logger.Debug($"Printing account details for {member.Name}");
+            Console.WriteLine(member.Name + " Total: " + member.Total);
+            Console.WriteLine("Date \t\t To \t\t From \t\t Amount \t\t Narrative");
+            foreach (var transaction in member.Transactions)
             {
-                Console.WriteLine(member.Name + " Total: " + member.Total);
-                Console.WriteLine("Date \t\t To \t\t From \t\t Amount \t\t Narrative");
-                foreach (var transaction in member.Transactions)
-                {
-                    Console.WriteLine($"{transaction.Date} \t {transaction.To} \t\t {transaction.From} \t\t {transaction.Amount} \t\t {transaction.Narrative}");
-                }
+                Console.WriteLine($"{transaction.Date} \t {transaction.To} \t\t {transaction.From} \t\t {transaction.Amount} \t\t {transaction.Narrative}");
             }
         }
 
