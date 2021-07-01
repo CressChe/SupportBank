@@ -15,7 +15,7 @@ namespace SupportBank
         public Transaction(string[] values)
         {
             Logger.Debug($"Creating Transaction with values - Date: {values[0]}, From: {values[1]}, To: {values[2]}, Narrative: {values[3]}, Amount: {values[4]}");
-            Date = values[0];
+            Date = Convert.ToDateTime(values[0]);
             From = values[1];
             To = values[2];
             Narrative = values[3];

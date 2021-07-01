@@ -28,17 +28,38 @@ namespace SupportBank
         }
 
         private static List<Transaction> GetTransactionsFromCSV()
-        { 
+        {
             Logger.Info("Parsing CSV");
-            var lines = File.ReadAllLines(@"..\..\..\Transactions2014.csv").ToList();
+            //var lines = File.ReadAllLines(@"..\..\..\Transactions2014.csv").ToList();
+            var lines = File.ReadAllLines(@"..\..\..\DodgyTransactions2015.csv").ToList();
             lines = lines.Skip(1).ToList();
-            var transactions = lines.Where(line => IsValidTransaction(line.Split(','))).Select(line => new Transaction(line.Split(','))).ToList();
+            var transactions = lines
+                .Where(line => IsValidTransaction(line.Split(',')))
+                .Select(line => new Transaction(line.Split(',')))
+                .ToList();
             return transactions;
         }
-
         private static bool IsValidTransaction(string[] values)
         {
-            return true;
+            var hasValidAmount = double.TryParse(values[4], out _);
+            var hasValidDate = DateTime.TryParse(values[0], out _);
+
+            var error = "";
+            if (!hasValidAmount)
+            {
+                error += $"Amount given invalid. ";
+            }
+            if (!hasValidDate)
+            {
+                error += $"Date given invalid. ";
+            }
+            if (!string.IsNullOrEmpty(error))
+            {
+                Logger.Error(error + $"Date: {values[0]}, From: {values[1]}, "
+                    + $"To: {values[2]}, Narrative: {values[3]}, Amount: {values[4]}");
+            }
+
+            return hasValidAmount && hasValidDate;
         }
 
         private static List<Member> GetAllMembers(List<Transaction> transactions)
