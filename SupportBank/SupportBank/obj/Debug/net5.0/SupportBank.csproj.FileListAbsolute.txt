@@ -35,3 +35,4 @@ C:\Work\TechSwitch\Course\Training-CS\SupportBank\SupportBank\SupportBank\obj\De
 C:\Work\TechSwitch\Course\Training-CS\SupportBank\SupportBank\SupportBank\obj\Debug\net5.0\SupportBank.pdb
 C:\Work\TechSwitch\Course\Training-CS\SupportBank\SupportBank\SupportBank\obj\Debug\net5.0\SupportBank.genruntimeconfig.cache
 C:\Training\SupportBankVS\SupportBank\SupportBank\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Work\TechSwitch\Course\Training-CS\SupportBank\SupportBank\SupportBank\bin\Debug\net5.0\Newtonsoft.Json.dll

@@ -17,7 +17,7 @@ namespace SupportBank
         {
             SetUpLogging();
 
-            var transactions = GetTransactionsFromJson();
+            var transactions = GetTransactions();
             var members = GetAllMembers(transactions);
             UpdateMemberTotals(members, transactions);
 
@@ -33,23 +33,42 @@ namespace SupportBank
             LogManager.Configuration = config;
         }
 
-        private static List<Transaction> GetTransactionsFromCSV()
+        public static List<Transaction> GetTransactions()
+        {
+            Console.WriteLine("Would you like transactions from: \n1) 2013? \n2) 2014? \n3) 2015?");
+            var transactionOption = Console.ReadLine();
+            if (transactionOption == "1")
+            {
+                return GetTransactionsFromJson();
+            }
+            if (transactionOption == "2")
+            {
+                return GetTransactionsFromCSV("Transactions2014.csv");
+            }
+            if (transactionOption == "3")
+            {
+                return GetTransactionsFromCSV("DodgyTransactions2015.csv");
+            }
+            Console.WriteLine("Invalid option given. Please try again.");
+            Logger.Debug($"User entered an invalid Option - programme rerun.");
+            return GetTransactions();
+        }
+
+        private static List<Transaction> GetTransactionsFromCSV(string filename)
         {
             Logger.Info("Parsing CSV");
-            //var lines = File.ReadAllLines(@"..\..\..\Transactions2014.csv").ToList();
-            var lines = File.ReadAllLines(@"..\..\..\DodgyTransactions2015.csv").ToList();
+            var lines = File.ReadAllLines($@"..\..\..\{filename}").ToList();
             lines = lines.Skip(1).ToList();
-            var transactions = lines
+            return lines
                 .Where(line => IsValidTransaction(line.Split(',')))
                 .Select(line => new Transaction(line.Split(',')))
                 .ToList();
-            return transactions;
         }
 
         private static List<Transaction> GetTransactionsFromJson()
         {
             Logger.Info("Parsing Json");
-            string input = File.ReadAllText(@"..\..\..\Transactions2013.json");
+            var input = File.ReadAllText(@"..\..\..\Transactions2013.json");
             return JsonConvert.DeserializeObject<List<Transaction>>(input);
         }
 
@@ -81,8 +100,8 @@ namespace SupportBank
         private static List<Member> GetAllMembers(List<Transaction> transactions)
         {
             Logger.Info("Getting all members from transactions");
-            var toNames = transactions.Select(t => t.ToAccount);
-            var fromNames = transactions.Select(t => t.FromAccount);
+            var toNames = transactions.Select(t => t.To);
+            var fromNames = transactions.Select(t => t.From);
             var members = toNames.Concat(fromNames).Distinct().Select(name => new Member(name)).ToList();
             return members;
         }
@@ -91,8 +110,8 @@ namespace SupportBank
         {
             foreach (var transaction in transactions)
             {
-                var memberFrom = members.Find(member => member.Name == transaction.FromAccount);
-                var memberTo = members.Find(member => member.Name == transaction.ToAccount);
+                var memberFrom = members.Find(member => member.Name == transaction.From);
+                var memberTo = members.Find(member => member.Name == transaction.To);
 
                 memberFrom.Transactions.Add(transaction);
                 memberTo.Transactions.Add(transaction);
@@ -150,7 +169,7 @@ namespace SupportBank
             Console.WriteLine("Date \t\t To \t\t From \t\t Amount \t\t Narrative");
             foreach (var transaction in member.Transactions)
             {
-                Console.WriteLine($"{transaction.Date} \t {transaction.ToAccount} \t\t {transaction.FromAccount} \t\t {transaction.Amount} \t\t {transaction.Narrative}");
+                Console.WriteLine($"{transaction.Date} \t {transaction.To} \t\t {transaction.From} \t\t {transaction.Amount} \t\t {transaction.Narrative}");
             }
         }
 
