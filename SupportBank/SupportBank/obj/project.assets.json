@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "NLog/4.7.10": {
         "type": "package",
         "compile": {
@@ -14,6 +23,33 @@
     }
   },
   "libraries": {
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "NLog/4.7.10": {
       "sha512": "rcegW7kYOCjl7wX0SzsqpPBqnJ51JKi1WkYb6QBVX0Wc5IgH19Pv4t/co+T0s06OS0Ne44xgkY/mHg0PdrmJow==",
       "type": "package",
@@ -50,23 +86,24 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "NLog >= 4.7.10"
+      "NLog >= 4.7.10",
+      "Newtonsoft.Json >= 13.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lukste\\.nuget\\packages\\": {}
+    "C:\\Users\\creche\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\TechSwitch\\Course\\Training-CS\\SupportBank\\SupportBank\\SupportBank\\SupportBank.csproj",
+      "projectUniqueName": "C:\\Training\\SupportBankVS\\SupportBank\\SupportBank\\SupportBank.csproj",
       "projectName": "SupportBank",
-      "projectPath": "C:\\Work\\TechSwitch\\Course\\Training-CS\\SupportBank\\SupportBank\\SupportBank\\SupportBank.csproj",
-      "packagesPath": "C:\\Users\\lukste\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\TechSwitch\\Course\\Training-CS\\SupportBank\\SupportBank\\SupportBank\\obj\\",
+      "projectPath": "C:\\Training\\SupportBankVS\\SupportBank\\SupportBank\\SupportBank.csproj",
+      "packagesPath": "C:\\Users\\creche\\.nuget\\packages\\",
+      "outputPath": "C:\\Training\\SupportBankVS\\SupportBank\\SupportBank\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lukste\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\creche\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -95,6 +132,10 @@
           "NLog": {
             "target": "Package",
             "version": "[4.7.10, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
           }
         },
         "imports": [

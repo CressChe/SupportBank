@@ -1,0 +1,118 @@
+2021-07-01 14:43:51.0550 Info - SupportBank.Program: Parsing CSV
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 01/01/2015, From: Laura B, To: Sarah T, Narrative: Misc Morale, Amount: 10.54
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 04/01/2015, From: Stephen S, To: Gergana I, Narrative: Lunch, Amount: 3.22
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 07/01/2015, From: Ben B, To: Jon A, Narrative: Fantasy Football, Amount: 9.93
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 11/01/2015, From: Ben B, To: Todd, Narrative: Lunch, Amount: 7.33
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 12/01/2015, From: Laura B, To: Ben B, Narrative: Beers, Amount: 8.94
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 15/01/2015, From: Todd, To: Rob S, Narrative: Beers, Amount: 10.19
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 16/01/2015, From: Laura B, To: Jon A, Narrative: Lego Assistance, Amount: 0.69
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 18/01/2015, From: Jon A, To: Sarah T, Narrative: Coffee, Amount: 10.73
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 22/01/2015, From: Gergana I, To: Todd, Narrative: Coffee, Amount: 0.8
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 24/01/2015, From: Gergana I, To: Chris W, Narrative: Coffee, Amount: 8.49
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 27/01/2015, From: Laura B, To: Tim L, Narrative: Jenkins Fees, Amount: 0.52
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 29/01/2015, From: Sam N, To: Chris W, Narrative: Lunch, Amount: 9.01
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 01/02/2015, From: Stephen S, To: Laura B, Narrative: Coffee, Amount: 7.53
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 02/02/2015, From: Stephen S, To: Rob S, Narrative: Fantasy Football, Amount: 7.43
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 04/02/2015, From: Rob S, To: Stephen S, Narrative: Fantasy Football, Amount: 5.78
+2021-07-01 14:43:51.1094 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 06/02/2015, From: Dan W, To: Gergana I, Narrative: Automated Testing Services, Amount: 10.29
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 07/02/2015, From: Jon A, To: Chris W, Narrative: Rails Consultancy, Amount: 7.37
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 10/02/2015, From: Sam N, To: Gergana I, Narrative: Sandbox Help, Amount: 9.84
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 11/02/2015, From: Chris W, To: Stephen S, Narrative: Misc Morale, Amount: 0.68
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 13/02/2015, From: Laura B, To: Gergana I, Narrative: Beers, Amount: 6.56
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 16/02/2015, From: Chris W, To: Dan W, Narrative: Jenkins Fees, Amount: 1.28
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 17/02/2015, From: Sarah T, To: Dan W, Narrative: Sandbox Help, Amount: 11.48
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 18/02/2015, From: Stephen S, To: Rob S, Narrative: Lego Assistance, Amount: 4.83
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 21/02/2015, From: Dan W, To: Ben B, Narrative: Pokemon Training, Amount: 0.5
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 24/02/2015, From: Todd, To: Gergana I, Narrative: Coffee, Amount: 9.08
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 26/02/2015, From: Stephen S, To: Jon A, Narrative: Pokemon Training, Amount: 4.23
+2021-07-01 14:43:51.1174 Error - SupportBank.Program: Amount given invalid. Date: 01/03/2015, From: Ben B, To: Sam N, Narrative: Lunch, Amount: One Cheeseburger
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 02/03/2015, From: Todd, To: Chris W, Narrative: Sandbox Help, Amount: 1.92
+2021-07-01 14:43:51.1174 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 04/03/2015, From: Laura B, To: Jon A, Narrative: Sandcastle Help, Amount: 9.09
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 06/03/2015, From: Stephen S, To: Gergana I, Narrative: Lego Assistance, Amount: 9.4
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 08/03/2015, From: Ben B, To: Sam N, Narrative: Pokemon Training, Amount: 11.32
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 11/03/2015, From: Stephen S, To: Jon A, Narrative: Sandcastle Help, Amount: 11.57
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 15/03/2015, From: Todd, To: Sam N, Narrative: Pokemon Training, Amount: 2.29
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 19/03/2015, From: Laura B, To: Chris W, Narrative: Coffee, Amount: 9.96
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 21/03/2015, From: Jon A, To: Gergana I, Narrative: Beers, Amount: 7.54
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 25/03/2015, From: Gergana I, To: Ben B, Narrative: Automated Testing Services, Amount: 2.39
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 28/03/2015, From: Stephen S, To: Tim L, Narrative: Lunch, Amount: 5.83
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 29/03/2015, From: Gergana I, To: Ben B, Narrative: Audit and Other Financial Services, Amount: 10.85
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 30/03/2015, From: Tim L, To: Todd, Narrative: Pokemon Training, Amount: 8.6
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 02/04/2015, From: Stephen S, To: Chris W, Narrative: Pokemon Training, Amount: 1.11
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 05/04/2015, From: Chris W, To: Ben B, Narrative: Lunch, Amount: 0.96
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 09/04/2015, From: Chris W, To: Rob S, Narrative: Audit and Other Financial Services, Amount: 11.79
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 12/04/2015, From: Gergana I, To: Laura B, Narrative: Stationary Items, Amount: 8.37
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 13/04/2015, From: Laura B, To: Tim L, Narrative: Services Rendered, Amount: 1.27
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 15/04/2015, From: Ben B, To: Sam N, Narrative: Lego Assistance, Amount: 8.5
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 19/04/2015, From: Stephen S, To: Chris W, Narrative: White Water Rafting, Amount: 8.91
+2021-07-01 14:43:51.1332 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 23/04/2015, From: Tim L, To: Todd, Narrative: Misc Morale, Amount: 8.1
+2021-07-01 14:43:51.1495 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 24/04/2015, From: Tim L, To: Sarah T, Narrative: Arcade Social, Amount: 6.38
+2021-07-01 14:43:51.1495 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 26/04/2015, From: Jon A, To: Todd, Narrative: Stationary Items, Amount: 8.44
+2021-07-01 14:43:51.1495 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 27/04/2015, From: Ben B, To: Jon A, Narrative: Pokemon Training, Amount: 10.91
+2021-07-01 14:43:51.1495 Error - SupportBank.Program: Date given invalid. Date: Last Thursday, From: Sarah T, To: Dan W, Narrative: Beers, Amount: 5.42
+2021-07-01 14:43:51.1495 Info - SupportBank.Program: Getting all members from transactions
+2021-07-01 14:43:51.1495 Debug - SupportBank.Member: Creating Member: Sarah T
+2021-07-01 14:43:51.1495 Debug - SupportBank.Member: Creating Member: Gergana I
+2021-07-01 14:43:51.1495 Debug - SupportBank.Member: Creating Member: Jon A
+2021-07-01 14:43:51.1495 Debug - SupportBank.Member: Creating Member: Todd
+2021-07-01 14:43:51.1495 Debug - SupportBank.Member: Creating Member: Ben B
+2021-07-01 14:43:51.1659 Debug - SupportBank.Member: Creating Member: Rob S
+2021-07-01 14:43:51.1659 Debug - SupportBank.Member: Creating Member: Chris W
+2021-07-01 14:43:51.1659 Debug - SupportBank.Member: Creating Member: Tim L
+2021-07-01 14:43:51.1659 Debug - SupportBank.Member: Creating Member: Laura B
+2021-07-01 14:43:51.1659 Debug - SupportBank.Member: Creating Member: Stephen S
+2021-07-01 14:43:51.1659 Debug - SupportBank.Member: Creating Member: Dan W
+2021-07-01 14:43:51.1659 Debug - SupportBank.Member: Creating Member: Sam N
+2021-07-01 14:43:51.1659 Debug - SupportBank.Program: Transaction from Laura B to Sarah T of amount 10.54 processed
+2021-07-01 14:43:51.1659 Debug - SupportBank.Program: Transaction from Stephen S to Gergana I of amount 3.22 processed
+2021-07-01 14:43:51.1659 Debug - SupportBank.Program: Transaction from Ben B to Jon A of amount 9.93 processed
+2021-07-01 14:43:51.1659 Debug - SupportBank.Program: Transaction from Ben B to Todd of amount 7.33 processed
+2021-07-01 14:43:51.1659 Debug - SupportBank.Program: Transaction from Laura B to Ben B of amount 8.94 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Todd to Rob S of amount 10.19 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Laura B to Jon A of amount 0.69 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Jon A to Sarah T of amount 10.73 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Gergana I to Todd of amount 0.8 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Gergana I to Chris W of amount 8.49 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Laura B to Tim L of amount 0.52 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Sam N to Chris W of amount 9.01 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Stephen S to Laura B of amount 7.53 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Stephen S to Rob S of amount 7.43 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Rob S to Stephen S of amount 5.78 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Dan W to Gergana I of amount 10.29 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Jon A to Chris W of amount 7.37 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Sam N to Gergana I of amount 9.84 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Chris W to Stephen S of amount 0.68 processed
+2021-07-01 14:43:51.1814 Debug - SupportBank.Program: Transaction from Laura B to Gergana I of amount 6.56 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Chris W to Dan W of amount 1.28 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Sarah T to Dan W of amount 11.48 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Stephen S to Rob S of amount 4.83 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Dan W to Ben B of amount 0.5 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Todd to Gergana I of amount 9.08 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Stephen S to Jon A of amount 4.23 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Todd to Chris W of amount 1.92 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Laura B to Jon A of amount 9.09 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Stephen S to Gergana I of amount 9.4 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Ben B to Sam N of amount 11.32 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Stephen S to Jon A of amount 11.57 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Todd to Sam N of amount 2.29 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Laura B to Chris W of amount 9.96 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Jon A to Gergana I of amount 7.54 processed
+2021-07-01 14:43:51.1964 Debug - SupportBank.Program: Transaction from Gergana I to Ben B of amount 2.39 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Stephen S to Tim L of amount 5.83 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Gergana I to Ben B of amount 10.85 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Tim L to Todd of amount 8.6 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Stephen S to Chris W of amount 1.11 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Chris W to Ben B of amount 0.96 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Chris W to Rob S of amount 11.79 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Gergana I to Laura B of amount 8.37 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Laura B to Tim L of amount 1.27 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Ben B to Sam N of amount 8.5 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Stephen S to Chris W of amount 8.91 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Tim L to Todd of amount 8.1 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Tim L to Sarah T of amount 6.38 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Jon A to Todd of amount 8.44 processed
+2021-07-01 14:43:51.2115 Debug - SupportBank.Program: Transaction from Ben B to Jon A of amount 10.91 processed
+2021-07-01 14:43:56.9258 Debug - SupportBank.Program: User Input: '1'
+2021-07-01 14:43:56.9258 Debug - SupportBank.Program: Printing totals for all members
+2021-07-01 15:09:35.5812 Info - SupportBank.Program: Parsing Json
+2021-07-01 15:16:55.0780 Info - SupportBank.Program: Parsing Json

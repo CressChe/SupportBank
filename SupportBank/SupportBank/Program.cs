@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using Newtonsoft.Json;
+using NLog;
 using NLog.Config;
 using NLog.Targets;
 using System;
@@ -14,17 +15,22 @@ namespace SupportBank
 
         private static void Main(string[] args)
         {
+            SetUpLogging();
+
+            var transactions = GetTransactionsFromJson();
+            var members = GetAllMembers(transactions);
+            UpdateMemberTotals(members, transactions);
+
+            PromptUserForInput(members);
+        }
+
+        private static void SetUpLogging()
+        {
             var config = new LoggingConfiguration();
             var target = new FileTarget { FileName = @"..\..\..\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
             config.AddTarget("File Logger", target);
             config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
             LogManager.Configuration = config;
-
-            var transactions = GetTransactionsFromCSV();
-            var members = GetAllMembers(transactions);
-            UpdateMemberTotals(members, transactions);
-
-            PromptUserForInput(members);
         }
 
         private static List<Transaction> GetTransactionsFromCSV()
@@ -39,6 +45,14 @@ namespace SupportBank
                 .ToList();
             return transactions;
         }
+
+        private static List<Transaction> GetTransactionsFromJson()
+        {
+            Logger.Info("Parsing Json");
+            string input = File.ReadAllText(@"..\..\..\Transactions2013.json");
+            return JsonConvert.DeserializeObject<List<Transaction>>(input);
+        }
+
         private static bool IsValidTransaction(string[] values)
         {
             var hasValidAmount = double.TryParse(values[4], out _);
@@ -57,6 +71,8 @@ namespace SupportBank
             {
                 Logger.Error(error + $"Date: {values[0]}, From: {values[1]}, "
                     + $"To: {values[2]}, Narrative: {values[3]}, Amount: {values[4]}");
+                Console.WriteLine("The following transaction could not be processed: \n" 
+                    + $"Date: {values[0]}, From: {values[1]}, To: {values[2]}, Narrative: {values[3]}, Amount: {values[4]}");
             }
 
             return hasValidAmount && hasValidDate;
@@ -65,8 +81,8 @@ namespace SupportBank
         private static List<Member> GetAllMembers(List<Transaction> transactions)
         {
             Logger.Info("Getting all members from transactions");
-            var toNames = transactions.Select(t => t.To);
-            var fromNames = transactions.Select(t => t.From);
+            var toNames = transactions.Select(t => t.ToAccount);
+            var fromNames = transactions.Select(t => t.FromAccount);
             var members = toNames.Concat(fromNames).Distinct().Select(name => new Member(name)).ToList();
             return members;
         }
@@ -75,8 +91,8 @@ namespace SupportBank
         {
             foreach (var transaction in transactions)
             {
-                var memberFrom = members.Find(member => member.Name == transaction.From);
-                var memberTo = members.Find(member => member.Name == transaction.To);
+                var memberFrom = members.Find(member => member.Name == transaction.FromAccount);
+                var memberTo = members.Find(member => member.Name == transaction.ToAccount);
 
                 memberFrom.Transactions.Add(transaction);
                 memberTo.Transactions.Add(transaction);
@@ -86,7 +102,7 @@ namespace SupportBank
 
         private static void PromptUserForInput(List<Member> members)
         {
-            Console.WriteLine("Welcome to SupportBank!");
+            Console.WriteLine("\nWelcome to SupportBank!");
             Console.WriteLine("Would you like to: \n1) Check all account balances? \n2) Check transaction history for an account?");
             var userOption = Console.ReadLine();
             Logger.Debug($"User Input: '{userOption}'");
@@ -134,7 +150,7 @@ namespace SupportBank
             Console.WriteLine("Date \t\t To \t\t From \t\t Amount \t\t Narrative");
             foreach (var transaction in member.Transactions)
             {
-                Console.WriteLine($"{transaction.Date} \t {transaction.To} \t\t {transaction.From} \t\t {transaction.Amount} \t\t {transaction.Narrative}");
+                Console.WriteLine($"{transaction.Date} \t {transaction.ToAccount} \t\t {transaction.FromAccount} \t\t {transaction.Amount} \t\t {transaction.Narrative}");
             }
         }
 

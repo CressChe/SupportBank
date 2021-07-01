@@ -7,8 +7,8 @@ namespace SupportBank
     {
         private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         public DateTime Date { get; }
-        public string From { get; }
-        public string To { get; }
+        public string FromAccount { get; }
+        public string ToAccount { get; }
         public string Narrative { get; }
         public double Amount { get; }
 
@@ -16,8 +16,8 @@ namespace SupportBank
         {
             Logger.Debug($"Creating Transaction with values - Date: {values[0]}, From: {values[1]}, To: {values[2]}, Narrative: {values[3]}, Amount: {values[4]}");
             Date = Convert.ToDateTime(values[0]);
-            From = values[1];
-            To = values[2];
+            FromAccount = values[1];
+            ToAccount = values[2];
             Narrative = values[3];
             Amount = Convert.ToDouble(values[4]);
         }
