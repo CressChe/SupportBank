@@ -54,6 +54,7 @@ namespace SupportBank
 
                 memberFrom.Transactions.Add(transaction);
                 memberTo.Transactions.Add(transaction);
+                Logger.Debug($"Transaction from {memberFrom.Name} to {memberTo.Name} of amount {transaction.Amount} processed");
             }
         }
 
