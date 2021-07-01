@@ -1,4 +1,5 @@
 ﻿using NLog;
+using System;
 
 namespace SupportBank
 {
@@ -11,13 +12,13 @@ namespace SupportBank
         public string Narrative { get; private set; }
         public double Amount { get; private set; }
 
-        public Transaction(string date, string from, string to, string narrative, double amount)
+        public Transaction(string[] values)
         {
-            Date = date;
-            From = from;
-            To = to;
-            Narrative = narrative;
-            Amount = amount;
+            Date = values[0];
+            From = values[1];
+            To = values[2];
+            Narrative = values[3];
+            Amount = Convert.ToDouble(values[4]);
         }
     }
 }

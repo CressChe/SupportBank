@@ -20,42 +20,37 @@ namespace SupportBank
             config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
             LogManager.Configuration = config;
 
-            var transactionHolder = GetTransactionsFromCSV();
-            var memberHolder = GetAllMembers(transactionHolder);
-            UpdateMemberTotals(memberHolder, transactionHolder);
+            var transactions = GetTransactionsFromCSV();
+            var members = GetAllMembers(transactions);
+            UpdateMemberTotals(members, transactions);
 
             Console.WriteLine("To print All return 'Y'");
             var printAll = Console.ReadLine();
             if (printAll == "Y" || printAll == "y")
             {
-                PrintAllMemberTotals(memberHolder);
+                PrintAllMemberTotals(members);
             }
             else
             {
                 Console.WriteLine("Which member would you like to print?");
                 var printMember = Console.ReadLine();
-                PrintMemberTotal(memberHolder, printMember);
+                PrintMemberTotal(members, printMember);
             }
         }
 
         private static List<Transaction> GetTransactionsFromCSV()
-        {
-            var transactionHolder = new List<Transaction>();
+        { 
             Logger.Info("Parsing CSV");
-            var lines = File.ReadAllLines(@"C:\Training\SupportBank\Transactions2014.csv").ToList();
+            var lines = File.ReadAllLines(@"..\..\..\Transactions2014.csv").ToList();
             lines = lines.Skip(1).ToList();
-            foreach (var line in lines)
-            {
-                var values = line.Split(',');
-                transactionHolder.Add(new Transaction(values[0], values[1], values[2], values[3], Convert.ToDouble(values[4])));
-            }
-            return transactionHolder;
+            var transactions = lines.Select(line => new Transaction(line.Split(','))).ToList();
+            return transactions;
         }
 
-        private static List<Member> GetAllMembers(List<Transaction> transactionHolder)
+        private static List<Member> GetAllMembers(List<Transaction> transactions)
         {
-            var toNames = transactionHolder.Select(t => t.To);
-            var fromNames = transactionHolder.Select(t => t.From);
+            var toNames = transactions.Select(t => t.To);
+            var fromNames = transactions.Select(t => t.From);
             var members = toNames.Concat(fromNames).Distinct().Select(name => new Member(name)).ToList();
             return members;
         }
@@ -64,8 +59,8 @@ namespace SupportBank
         {
             foreach (var transaction in transactions)
             {
-                var memberFrom = members.Find(item => item.Name == transaction.From);
-                var memberTo = members.Find(item => item.Name == transaction.To);
+                var memberFrom = members.Find(member => member.Name == transaction.From);
+                var memberTo = members.Find(member => member.Name == transaction.To);
 
                 memberFrom.Transactions.Add(transaction);
                 memberTo.Transactions.Add(transaction);
@@ -82,7 +77,7 @@ namespace SupportBank
 
         private static void PrintMemberTotal(List<Member> members, string name)
         {
-            var member = members.Find(item => item.Name.ToLower() == name.ToLower());
+            var member = members.Find(member => member.Name.ToLower() == name.ToLower());
             if (member == null)
             {
                 Console.WriteLine($"Member {name} not found. Nothing to return.");
