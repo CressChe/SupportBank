@@ -15,7 +15,7 @@ namespace SupportBank
         private static void Main(string[] args)
         {
             var config = new LoggingConfiguration();
-            var target = new FileTarget { FileName = @"C:\Training\SupportBank\Logs\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+            var target = new FileTarget { FileName = @"..\..\..\SupportBank.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
             config.AddTarget("File Logger", target);
             config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
             LogManager.Configuration = config;
@@ -24,18 +24,7 @@ namespace SupportBank
             var members = GetAllMembers(transactions);
             UpdateMemberTotals(members, transactions);
 
-            Console.WriteLine("To print All return 'Y'");
-            var printAll = Console.ReadLine();
-            if (printAll == "Y" || printAll == "y")
-            {
-                PrintAllMemberTotals(members);
-            }
-            else
-            {
-                Console.WriteLine("Which member would you like to print?");
-                var printMember = Console.ReadLine();
-                PrintMemberTotal(members, printMember);
-            }
+            PromptUserForInput(members);
         }
 
         private static List<Transaction> GetTransactionsFromCSV()
@@ -49,6 +38,7 @@ namespace SupportBank
 
         private static List<Member> GetAllMembers(List<Transaction> transactions)
         {
+            Logger.Info("Getting all members from transactions");
             var toNames = transactions.Select(t => t.To);
             var fromNames = transactions.Select(t => t.From);
             var members = toNames.Concat(fromNames).Distinct().Select(name => new Member(name)).ToList();
@@ -66,6 +56,28 @@ namespace SupportBank
                 memberTo.Transactions.Add(transaction);
             }
         }
+
+        private static void PromptUserForInput(List<Member> members)
+        {
+            Console.WriteLine("Welcome to SupportBank!");
+            Console.WriteLine("Would you like to: \n1) Check all account balances? \n2) Check transaction history for an account?");
+            var userOption = Console.ReadLine();
+            if (userOption == "1")
+            {
+                PrintAllMemberTotals(members);
+            }
+            else if (userOption == "2")
+            {
+                Console.WriteLine("Which member would you like to print the transaction history for?");
+                var printMember = Console.ReadLine();
+                PrintMemberTotal(members, printMember);
+            }
+            else
+            {
+                Console.WriteLine("Invalid option given. Please try again.");
+            }
+        }
+
 
         private static void PrintAllMemberTotals(List<Member> members)
         {

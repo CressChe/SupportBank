@@ -54,19 +54,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\creche\\.nuget\\packages\\": {}
+    "C:\\Users\\lukste\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Training\\SupportBankVS\\SupportBank\\SupportBank\\SupportBank.csproj",
+      "projectUniqueName": "C:\\Work\\TechSwitch\\Course\\Training-CS\\SupportBank\\SupportBank\\SupportBank\\SupportBank.csproj",
       "projectName": "SupportBank",
-      "projectPath": "C:\\Training\\SupportBankVS\\SupportBank\\SupportBank\\SupportBank.csproj",
-      "packagesPath": "C:\\Users\\creche\\.nuget\\packages\\",
-      "outputPath": "C:\\Training\\SupportBankVS\\SupportBank\\SupportBank\\obj\\",
+      "projectPath": "C:\\Work\\TechSwitch\\Course\\Training-CS\\SupportBank\\SupportBank\\SupportBank\\SupportBank.csproj",
+      "packagesPath": "C:\\Users\\lukste\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\TechSwitch\\Course\\Training-CS\\SupportBank\\SupportBank\\SupportBank\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\creche\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lukste\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -14,6 +14,7 @@ namespace SupportBank
 
         public Member(string name)
         {
+            Logger.Debug($"Creating Member: {name}");
             Name = name;
             Transactions = new List<Transaction>();
         }

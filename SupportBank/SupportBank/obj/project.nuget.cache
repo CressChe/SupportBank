@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9IpcCHh66PCvrM6HzFUK3SFiMW+gY5t0cKTZj44SVZ9yGIIAHAW/AuOi2X5tk7VeeV8qGT6y+fxoLRuB5/M3vw==",
+  "dgSpecHash": "HtwbJqzLJL1l4zBsmTZNUb898TT8wTymgN/LHgD25sv/5jql3oKYqE/tiu/5cU9PpckeHn0wmbGPBx45g2WZzA==",
   "success": true,
-  "projectFilePath": "C:\\Training\\SupportBankVS\\SupportBank\\SupportBank\\SupportBank.csproj",
+  "projectFilePath": "C:\\Work\\TechSwitch\\Course\\Training-CS\\SupportBank\\SupportBank\\SupportBank\\SupportBank.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\creche\\.nuget\\packages\\nlog\\4.7.10\\nlog.4.7.10.nupkg.sha512"
+    "C:\\Users\\lukste\\.nuget\\packages\\nlog\\4.7.10\\nlog.4.7.10.nupkg.sha512"
   ],
   "logs": []
 }
