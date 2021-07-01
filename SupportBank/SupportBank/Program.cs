@@ -90,7 +90,7 @@ namespace SupportBank
             {
                 Logger.Error(error + $"Date: {values[0]}, From: {values[1]}, "
                     + $"To: {values[2]}, Narrative: {values[3]}, Amount: {values[4]}");
-                Console.WriteLine("The following transaction could not be processed: \n" 
+                Console.WriteLine("The following transaction could not be processed: \n"
                     + $"Date: {values[0]}, From: {values[1]}, To: {values[2]}, Narrative: {values[3]}, Amount: {values[4]}");
             }
 
