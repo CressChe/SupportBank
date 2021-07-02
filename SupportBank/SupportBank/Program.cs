@@ -6,11 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
 
 namespace SupportBank
 {
     internal class Program
     {
+        private const string XmlFile = @"..\..\..\Transactions2012.xml";
         private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
 
         private static void Main(string[] args)
@@ -35,7 +37,8 @@ namespace SupportBank
 
         public static List<Transaction> GetTransactions()
         {
-            Console.WriteLine("Would you like transactions from: \n1) 2013? \n2) 2014? \n3) 2015?");
+            Console.WriteLine("\nWelcome to SupportBank!");
+            Console.WriteLine("Would you like transactions from: \n1) 2013? \n2) 2014? \n3) 2015? \n4)2012?");
             var transactionOption = Console.ReadLine();
             if (transactionOption == "1")
             {
@@ -48,6 +51,10 @@ namespace SupportBank
             if (transactionOption == "3")
             {
                 return GetTransactionsFromCSV("DodgyTransactions2015.csv");
+            }
+            if (transactionOption == "4")
+            {
+                return GetTransactionsFromXML();
             }
             Console.WriteLine("Invalid option given. Please try again.");
             Logger.Debug($"User entered an invalid Option - programme rerun.");
@@ -70,6 +77,29 @@ namespace SupportBank
             Logger.Info("Parsing Json");
             var input = File.ReadAllText(@"..\..\..\Transactions2013.json");
             return JsonConvert.DeserializeObject<List<Transaction>>(input);
+        }
+
+        private static List<Transaction> GetTransactionsFromXML()
+        {
+            Logger.Info("Parsing XML");
+            var input = new XmlDocument();
+            input.Load(XmlFile);
+
+            var nodes = input.SelectNodes("TransactionList/SupportTransaction");
+
+            foreach (XmlElement childNode in nodes)
+            {
+                var text = childNode.InnerText;
+                var attr = childNode.GetAttribute("Date");
+                var description = childNode.SelectSingleNode("Description")?.InnerText;
+                var to = childNode.SelectSingleNode("Parties/To")?.InnerText;
+                var from = childNode.SelectSingleNode("Parties/From")?.InnerText;
+                var temp = 1 + 2;
+            }
+
+
+
+            return new List<Transaction>();
         }
 
         private static bool IsValidTransaction(string[] values)
@@ -121,7 +151,6 @@ namespace SupportBank
 
         private static void PromptUserForInput(List<Member> members)
         {
-            Console.WriteLine("\nWelcome to SupportBank!");
             Console.WriteLine("Would you like to: \n1) Check all account balances? \n2) Check transaction history for an account?");
             var userOption = Console.ReadLine();
             Logger.Debug($"User Input: '{userOption}'");
@@ -160,7 +189,8 @@ namespace SupportBank
             if (member == null)
             {
                 Logger.Warn($"User input '{name}' did not match any members.");
-                Console.WriteLine($"Member {name} not found. Nothing to return.");
+                Console.WriteLine($"Member {name} not found. Nothing to return. Please try again.");
+                PromptUserForInput(members);
                 return;
             }
 
