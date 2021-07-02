@@ -89,15 +89,21 @@ namespace SupportBank
 
             foreach (XmlElement childNode in nodes)
             {
-                var text = childNode.InnerText;
-                var attr = childNode.GetAttribute("Date");
+                
+                var date = childNode.GetAttribute("Date");
                 var description = childNode.SelectSingleNode("Description")?.InnerText;
                 var to = childNode.SelectSingleNode("Parties/To")?.InnerText;
                 var from = childNode.SelectSingleNode("Parties/From")?.InnerText;
+                var amount = childNode.SelectSingleNode("Value")?.InnerText;
+
+                string[] values = { date, from, to, description, amount };
+
+
+
                 var temp = 1 + 2;
             }
 
-
+            
 
             return new List<Transaction>();
         }
