@@ -921,3 +921,6 @@
 2021-07-02 12:12:52.3769 Info - SupportBank.Program: Parsing XML
 2021-07-02 12:30:29.8782 Info - SupportBank.Program: Parsing XML
 2021-07-02 12:31:44.5933 Info - SupportBank.Program: Parsing XML
+2021-07-02 14:42:34.0273 Info - SupportBank.Program: Parsing XML
+2021-07-02 14:42:34.0676 Debug - SupportBank.Transaction: Creating Transaction with values - Date: 40909, From: Gergana I, To: Jon A, Narrative: Snooker Night, Amount: 9.22
+2021-07-02 15:00:28.5598 Info - SupportBank.Program: Parsing XML

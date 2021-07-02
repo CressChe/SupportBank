@@ -86,21 +86,26 @@ namespace SupportBank
             input.Load(XmlFile);
 
             var nodes = input.SelectNodes("TransactionList/SupportTransaction");
+            List<Transaction> transactions = new List<Transaction>();
 
             foreach (XmlElement childNode in nodes)
             {
-                
                 var date = childNode.GetAttribute("Date");
+                var intdate = Int32.Parse(date);
+                var dateDate = DateTime.Parse(intdate);
+                
+                // DateTime date2 ToDateTime(date, System.Xml.XmlDateTimeSerializationMode 1);
+
                 var description = childNode.SelectSingleNode("Description")?.InnerText;
                 var to = childNode.SelectSingleNode("Parties/To")?.InnerText;
                 var from = childNode.SelectSingleNode("Parties/From")?.InnerText;
                 var amount = childNode.SelectSingleNode("Value")?.InnerText;
 
+               //string format = "yyyy-MM-ddTHH:mm:sszzzzzz";
+              //var convertDate = XmlConvert.ToDateTime(intdate); 
                 string[] values = { date, from, to, description, amount };
 
-
-
-                var temp = 1 + 2;
+                transactions.Add(new Transaction(values));
             }
 
             
